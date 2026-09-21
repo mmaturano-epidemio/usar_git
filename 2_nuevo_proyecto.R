@@ -81,18 +81,11 @@ use_git()
 
 
 # ------------------------------------------------------------------------------
-# PASO 2b: VERIFICAR (después del reinicio)
+# PASO 2b: VERIFICAR 
 # ------------------------------------------------------------------------------
 # ¿Qué archivos está siguiendo Git? No debería estar .Renviron ni ninguna base.
 
 system("git ls-files")
-
-# ¿Qué regla está ignorando el .Renviron? Debería mostrar algo como:
-#   .gitignore:1:.Renviron    .Renviron
-system("git check-ignore -v .Renviron")
-
-# Si "git ls-files" lista .Renviron, Git ya lo estaba siguiendo:
-# ver el bloque "SI YA SE COMMITEÓ" al final.
 
 
 # ------------------------------------------------------------------------------
