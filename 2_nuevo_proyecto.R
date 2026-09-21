@@ -102,7 +102,11 @@ use_github(private = TRUE)
 # ¡Felicidades! Se abrirá el navegador mostrando tu proyecto publicado en GitHub.
 # (Si algún día necesitás hacerlo público: GitHub -> Settings -> Danger Zone.)
 
-
+# Para conectarse a un repo ya existente:
+# usethis::create_from_github(
+#   "usuario/nombre_del_repo", 
+#   destdir = "C:/Ruta/A/Tus/Proyectos"
+# )
 # ------------------------------------------------------------------------------
 # PASO 4 (OPCIONAL): UNA PLANTILLA DEL .Renviron PARA EL EQUIPO
 # ------------------------------------------------------------------------------
