@@ -28,6 +28,7 @@ datos[, Species := factor(Species,
                           labels = str_to_title(unique(Species)))]
 ```
 Iris tiene `r nrow(datos)` observaciones sobre `r dim(datos[,-"Species"])[2]` variables de `r uniqueN(datos$Species)` especies de plantas. 
+
 ## Gráficos
 
 Vamos a graficar la relación entre especie y tamaño del pétalo
