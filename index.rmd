@@ -18,13 +18,6 @@ format:
 Este es un documento de prueba para enseñar a usar `GitHub` y `RPubs`.
 Vamos a ponerle algunos gráficos para que quede más bonito, usando el **dataset *iris***.
 
-## Gráficos
-
-Vamos a graficar la relación entre especie y tamaño del pétalo
-
-### Gráfico 1
-Largo promedio según especie
-
 ```{r message=FALSE, warning=FALSE}
 # Cargar librerías
 library(data.table); library(ggplot2); library(stringr); library(paletteer)
@@ -33,7 +26,16 @@ library(data.table); library(ggplot2); library(stringr); library(paletteer)
 datos <- as.data.table(iris)
 datos[, Species := factor(Species, 
                           labels = str_to_title(unique(Species)))]
+```
+Iris tiene `r nrow(datos)` observaciones sobre `r dim(datos[,-"Species"])[2]` variables de `r uniqueN(datos$Species)` especies de plantas. 
+## Gráficos
 
+Vamos a graficar la relación entre especie y tamaño del pétalo
+
+### Gráfico 1
+Largo promedio según especie
+
+```{r message=FALSE, warning=FALSE}
 # Gráfico 1
 datos[, mean(Petal.Length), 
       Species] |> ggplot() +
