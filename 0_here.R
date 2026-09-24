@@ -90,7 +90,10 @@
 # fwrite(defunciones_limpias, here("datos", "procesados", "defunciones_analisis.rds"))
 
 # Ejemplo en vivo:
+# 1ro: Verificamos si tenemos 'pacman'; si no, lo instalamos
+if(!require(pacman)) install.packages("pacman")
 
+# 2do: pacman carga o instala automáticamente los paquetes necesarios
 pacman::p_load(here, data.table)
 
 # Creamos la estructura real de carpetas del proyecto
